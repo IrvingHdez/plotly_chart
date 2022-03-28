@@ -54,7 +54,7 @@ function init() {
   
   // Demographics Panel
   function buildMetadata(sample) {
-    d3.json("samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {    
       var metadata = data.metadata;
       // Filter the data for the object with the desired sample number
       var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
@@ -80,7 +80,7 @@ function init() {
   function buildCharts(sample) {
     let chartChoice = d3.select("#selGraph").node().value;
     // Use d3.json to load the samples.json file
-    d3.json("samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {    
       
       // Create a variable that holds the samples array.
       var samples = data.samples;
@@ -120,7 +120,7 @@ function init() {
           type: "bar",
           orientation: "h",
           marker: {
-            color: 'purple'
+            color: 'Green'
           },
         }
       ];
@@ -149,7 +149,7 @@ function init() {
           marker: {
             size: sample_values,
             color: otu_ids,
-            colorscale: "Purple"
+            colorscale: "Blue"
           }
         }
       ];
